@@ -8,30 +8,7 @@
   <title>Page 5</title>
 
 <style>
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
 
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
 
 
   .flex-container {
@@ -114,6 +91,7 @@
     <div>
 
       <h2>Isochronic Tones</h2>
+
       <button class="accordion">Rhythm vs. Pitch</button>
       <div class="panel">
         <p>The fascinating bridge between tones and rhythms can be
@@ -162,6 +140,8 @@
         and deepen these practices. As a disclaimer, however, entrainment
         methods may induce seizures in epileptic people and therefore should 
         not be attempted. </p>
+
+        </div>
     </div>   
   </article>
   </html>
@@ -172,6 +152,24 @@
 <p> Copyright 2022 Dinaz Kardooni</p>
 </footer>
 </body>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.previousElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+        this.innerHTML = "More";
+      } else {
+        panel.style.display = "block";
+        this.innerHTML = "Less";
+      }
+    });
+  }
+</script>
 
 </html>
 
